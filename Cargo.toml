@@ -1,5 +1,5 @@
 [package]
-name = "isometric-projection"
+name = "isometric_projection"
 version = "0.1.0"
 edition = "2024"
 
