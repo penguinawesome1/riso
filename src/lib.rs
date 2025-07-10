@@ -19,11 +19,11 @@ impl IsometricProjection {
     /// ```
     /// use isometric_projection::IsometricProjection;
     ///
-    /// let proj: IsometricProjection = IsometricProjection::new();
+    /// let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
     /// ```
     pub fn new<const HALF_TW: u32, const HALF_TH: u32>() -> Self {
         let iso_matrix_2d = Mat2::from_cols(
-            Vec2::new(1.0 * (HALF_TW as f32) * 0.5, 0.5 * (HALF_TH as f32) * 0.5),
+            Vec2::new(1.0 * (HALF_TW as f32), 0.5 * (HALF_TH as f32)),
             Vec2::new(-1.0 * (HALF_TW as f32), 0.5 * (HALF_TH as f32))
         );
         let inv_iso_matrix_2d = iso_matrix_2d.inverse();
@@ -45,7 +45,7 @@ impl IsometricProjection {
     /// use glam::{ IVec3, Vec3 };
     /// use isometric_projection::IsometricProjection;
     ///
-    /// let proj: IsometricProjection = IsometricProjection::new();
+    /// let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
     ///
     /// let pos: IVec3 = IVec3::new(10, 20, 30);
     /// let screen_pos: Vec3 = proj.world_to_screen(pos);
