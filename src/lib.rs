@@ -3,10 +3,13 @@ use glam::{ Mat2, Vec2, Vec3, IVec3 };
 pub struct IsometricProjection {
     /// The 2x2 matrix for the XY part of the isometric projection.
     iso_matrix_2d: Mat2,
+    
     /// The inverse of the 2x2 matrix.
     inv_iso_matrix_2d: Mat2,
+    
     /// Scalar for Z-axis scaling (world_z to screen_z).
     z_scale: f32,
+    
     /// Inverse scalar for Z-axis scaling (screen_z to world_z).
     inv_z_scale: f32,
 }
