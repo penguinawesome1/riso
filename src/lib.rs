@@ -2,7 +2,7 @@ use glam::{ Mat2, Vec2, Vec3, IVec3 };
 
 /// Represents an isometric projection to convert between 3D world grid positions
 /// and 2D screen coordinates.
-pub struct IsometricProjection {
+pub struct IsoProjection {
     /// The 2x2 matrix for the XY part of the isometric projection.
     iso_matrix_2d: Mat2,
     
@@ -16,7 +16,7 @@ pub struct IsometricProjection {
     inv_z_scale: f32,
 }
 
-impl IsometricProjection {
+impl IsoProjection {
     /// Create a new projection struct to convert between world and screen.
     ///
     /// # Type Parameters
@@ -27,9 +27,9 @@ impl IsometricProjection {
     /// # Examples
     ///
     /// ```
-    /// use riso::IsometricProjection;
+    /// use spriso::IsoProjection;
     ///
-    /// let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
+    /// let proj: IsoProjection = IsoProjection::new::<14, 14>();
     /// ```
     pub fn new<const HALF_TW: u32, const HALF_TH: u32>() -> Self {
         let iso_matrix_2d = Mat2::from_cols(
@@ -53,9 +53,9 @@ impl IsometricProjection {
     ///
     /// ```
     /// use glam::{ IVec3, Vec3 };
-    /// use riso::IsometricProjection;
+    /// use spriso::IsoProjection;
     ///
-    /// let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
+    /// let proj: IsoProjection = IsoProjection::new::<14, 14>();
     ///
     /// let pos: IVec3 = IVec3::new(10, 20, 30);
     /// let screen_pos: Vec3 = proj.world_to_screen(pos);
