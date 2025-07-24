@@ -1,5 +1,7 @@
 use glam::{ Mat2, Vec2, Vec3, IVec3 };
 
+/// Represents an isometric projection to convert between 3D world grid positions
+/// and 2D screen coordinates.
 pub struct IsometricProjection {
     /// The 2x2 matrix for the XY part of the isometric projection.
     iso_matrix_2d: Mat2,
@@ -16,6 +18,11 @@ pub struct IsometricProjection {
 
 impl IsometricProjection {
     /// Create a new projection struct to convert between world and screen.
+    ///
+    /// # Type Parameters
+    ///
+    /// * `HALF_TW`: Half the width of an isometric tile in screen pixels.
+    /// * `HALF_TH`: Half the height of an isometric tile in screen pixels.
     ///
     /// # Examples
     ///
