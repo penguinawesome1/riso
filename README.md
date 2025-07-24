@@ -6,9 +6,9 @@ Converts from screen coords to a 3d grid world and vice versa for an isometric p
 
 ```rust
 use glam::{ IVec3, Vec3 };
-use spriso::IsometricProjection;
+use spriso::IsoProjection;
 
-let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
+let proj: IsoProjection = IsoProjection::new::<14, 14>();
 
 let pos: IVec3 = IVec3::new(10, 20, 30);
 let screen_pos: Vec3 = proj.world_to_screen(pos);
