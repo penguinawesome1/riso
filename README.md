@@ -1,4 +1,4 @@
-# Riso
+# Spriso
 
 Converts from screen coords to a 3d grid world and vice versa for an isometric projection system.
 
@@ -6,7 +6,7 @@ Converts from screen coords to a 3d grid world and vice versa for an isometric p
 
 ```rust
 use glam::{ IVec3, Vec3 };
-use riso::IsometricProjection;
+use spriso::IsometricProjection;
 
 let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
 
@@ -26,7 +26,7 @@ assert_eq!(pos, world_pos);
 
 ```toml
 [dependencies]
-riso = { git = "https://github.com/penguinawesome1/riso.git", tag = "v0.1.0" }
+spriso = { git = "https://github.com/penguinawesome1/spriso.git", tag = "v0.1.0" }
 glam = "0.30.4"
 ```
 
