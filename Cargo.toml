@@ -1,5 +1,5 @@
 [package]
-name = "isometric_projection"
+name = "riso"
 version = "0.1.0"
 edition = "2024"
 
