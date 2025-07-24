@@ -27,7 +27,7 @@ impl IsometricProjection {
     /// # Examples
     ///
     /// ```
-    /// use isometric_projection::IsometricProjection;
+    /// use riso::IsometricProjection;
     ///
     /// let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
     /// ```
@@ -53,7 +53,7 @@ impl IsometricProjection {
     ///
     /// ```
     /// use glam::{ IVec3, Vec3 };
-    /// use isometric_projection::IsometricProjection;
+    /// use riso::IsometricProjection;
     ///
     /// let proj: IsometricProjection = IsometricProjection::new::<14, 14>();
     ///
