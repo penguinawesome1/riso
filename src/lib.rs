@@ -82,4 +82,12 @@ impl IsoProjection {
             (screen_pos.z * self.inv_z_scale).round() as i32
         )
     }
+
+    /// Converts 3d grid float position to its corresponding screen position.
+    pub fn world_float_to_screen(&self, world_float_pos: Vec3) -> Vec3 {
+        let world_vec_2d: Vec2 = Vec2::new(world_float_pos.x, world_float_pos.y);
+        let screen_vec_2d: Vec2 = self.iso_matrix_2d * world_vec_2d;
+
+        Vec3::new(screen_vec_2d.x, screen_vec_2d.y, world_float_pos.z * self.z_scale)
+    }
 }
